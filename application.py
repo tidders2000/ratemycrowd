@@ -7,13 +7,14 @@ from config import Config
 from forms import LoginForm, SignUp
 from werkzeug.security import generate_password_hash, check_password_hash
 from flask_mail import Mail, Message
-from flask import Flask, flash, request, redirect, url_for
+
 from werkzeug.utils import secure_filename
 
 UPLOAD_FOLDER = 'static/images/profile'
 ALLOWED_EXTENSIONS = set(['txt', 'pdf', 'png', 'jpg', 'jpeg', 'gif'])
 
-app = Flask(__name__)
+application = Flask(__name__)
+app=application
 # mail code taken from tutorial and adapted for my use case
 app.config['MAIL_SERVER']='smtp.gmail.com'
 app.config['MAIL_PORT'] = 465
@@ -30,10 +31,10 @@ csrf = CSRFProtect(app)
 # Connect to the database.........................
 
 username = os.getenv('C9_USER')
-connection = pymysql.connect(host=os.environ['HOST_NAME'],
-                             user=os.environ['DB_USERNAME'],
-                             password=os.environ['DB_PASSWORD'],
-                             db=os.environ['DB_DB']
+connection = pymysql.connect(host='c9a3eb67@eu-cdbr-west-02.cleardb.net',
+                             user='b53058aa675415',
+                             password='c9a3eb67',
+                             db='heroku_8771c70ab5190f8',
                             )
 
 #login form........................................................
