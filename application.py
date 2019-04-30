@@ -4,7 +4,7 @@ from flask import Flask, render_template, redirect, request, url_for, request, f
 from flask_wtf.csrf import CSRFProtect
 from datetime import datetime
 from config import Config
-from forms import LoginForm, SignUp
+from forms import LoginForm
 from werkzeug.security import generate_password_hash, check_password_hash
 from flask_mail import Mail, Message
 
@@ -31,7 +31,7 @@ csrf = CSRFProtect(app)
 # Connect to the database.........................
 
 username = os.getenv('C9_USER')
-connection = pymysql.connect(host='c9a3eb67@eu-cdbr-west-02.cleardb.net',
+connection = pymysql.connect(host='eu-cdbr-west-02.cleardb.net',
                              user='b53058aa675415',
                              password='c9a3eb67',
                              db='heroku_8771c70ab5190f8',
