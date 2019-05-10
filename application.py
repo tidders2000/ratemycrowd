@@ -93,10 +93,12 @@ def home():
                 sql= "SELECT `profileImage` FROM `users` WHERE `email`=%s"
                 cursor.execute(sql,(g.user))
                 session['image'] = cursor.fetchone()
+                
                 profilepic=session['image'][0]
                 
         except:
              flash('error')
+             profilepic='blank_profile.png'
         
         #fetchs user id using session email and then gets badges
         try:
@@ -371,6 +373,7 @@ def myprofile():
            
         except:
             flash('error')
+            return redirect('myprofile')
         #add changed details with if statements to manage blanks and not erase data
         if request.method == 'POST':
                   fullname=request.form['fullname']

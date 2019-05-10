@@ -3,7 +3,7 @@
 <div class="container">
   <div class="row buffer">
     <div class="row">
-      <form class="col s12" method="POST" action="">
+      <form class="col s12 prof-form" method="POST" action="">
         <input type="hidden" name="csrf_token" value="{{ csrf_token() }}"/>
         {% for res in result %}
         <div class="row">
@@ -14,14 +14,15 @@
           </div>
           <div class="input-field col s6">
             <select name='loca'>
-                  <option value="{{res.locationId}}" selected>{{res.locationname}}</option>
+                  <option value="{{res.locationId}}"  selected>{{res.locationname}}</option>
                 {% for loc in location %}
                 
                 <option value="{{ loc.id }}">{{ loc.locationname}}</option>
                 {% endfor %}
+              
                 </select>
-
-            <label>location</label>
+               <label>location</label>
+           
           </div>
         </div>
 
