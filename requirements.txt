@@ -9,7 +9,7 @@ Jinja2==2.10
 MarkupSafe==1.1.1
 PyMySQL==0.9.3
 WTForms==2.2.1
-Werkzeug==0.14.1
+Werkzeug==0.15.3
 blinker==1.4
 dnspython==1.16.0
 gunicorn==19.9.0
