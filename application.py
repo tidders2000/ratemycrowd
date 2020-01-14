@@ -31,10 +31,10 @@ csrf = CSRFProtect(app)
 # Connect to the database.........................
 
 username = os.getenv('C9_USER')
-connection = pymysql.connect(host='eu-cdbr-west-02.cleardb.net',
-                             user='b53058aa675415',
-                             password='c9a3eb67',
-                             db='heroku_8771c70ab5190f8',
+connection = pymysql.connect(host=os.getenv('HOST_NAME'),
+                             user=os.getenv('DB_USERNAME'),
+                             password=os.getenv('DB_PASSWORD'),
+                             db=os.getenv('DB_DB'),
                             )
 
 #login form........................................................
